@@ -10,10 +10,10 @@ trait ErrorResponses
 {
     /**
      * @param  string  $message
-     * @param  int|null  $httpCode
+     * @param  int  $httpCode
      * @return JsonResponse
      */
-    public function error(string $message, ?int $httpCode = null): JsonResponse
+    public function error(string $message, int $httpCode = null): JsonResponse
     {
         $this->setError($message);
 

@@ -14,6 +14,7 @@ return [
         ],
 
         'success' => [
+            'created' => 'Successfully Created',
             'stored' => 'Successfully Stored',
             'deleted' => 'Successfully Deleted',
         ],
