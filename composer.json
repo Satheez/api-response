@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "satheez/api-response",
+    "description": "Standard API response class",
     "keywords": [
-        ":vendor_name",
+        "Satheez",
         "laravel",
-        ":package_slug"
+        "api-response"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/satheez/api-response",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Satheez",
+            "email": "isatheez@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,16 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
-        }
+            "Satheez\\ApiResponse\\": "src",
+            "Satheez\\ApiResponse\\Database\\Factories\\": "database/factories"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Satheez\\ApiResponse\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,15 +54,19 @@
         "format": "vendor/bin/pint"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Satheez\\ApiResponse\\ApiResponseServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "ApiResponse": "Satheez\\ApiResponse\\Facades\\ApiResponse"
             }
         }
     },
