@@ -8,8 +8,8 @@ use Illuminate\Http\Response as IlluminateResponse;
 trait SuccessResponses
 {
     /**
-     * @param mixed $data
-     * @param string $message
+     * @param  mixed  $data
+     * @param  string  $message
      * @return JsonResponse
      */
     public function success(mixed $data = [], string $message = ''): JsonResponse
@@ -22,25 +22,26 @@ trait SuccessResponses
     }
 
     /**
-     * @param mixed $data
-     * @param string $message
+     * @param  mixed  $data
+     * @param  string  $message
      * @return JsonResponse
      */
     public function stored($data = [], string $message = null): JsonResponse
     {
         $message = $message ?? config('api-response.messages.success.stored');
+
         return $this->success($data, $message);
     }
 
     /**
-     * @param mixed $data
-     * @param string $message
+     * @param  mixed  $data
+     * @param  string  $message
      * @return JsonResponse
      */
     public function deleted($data = [], string $message = null): JsonResponse
     {
-        $message = $message?? config('api-response.messages.success.deleted');
+        $message = $message ?? config('api-response.messages.success.deleted');
+
         return $this->success($data, $message);
     }
-
 }

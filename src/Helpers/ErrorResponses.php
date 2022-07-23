@@ -9,8 +9,8 @@ use Illuminate\Http\Response as IlluminateResponse;
 trait ErrorResponses
 {
     /**
-     * @param string $message
-     * @param int|null $httpCode
+     * @param  string  $message
+     * @param  int|null  $httpCode
      * @return JsonResponse
      */
     public function error(string $message, ?int $httpCode = null): JsonResponse
@@ -23,7 +23,7 @@ trait ErrorResponses
     }
 
     /**
-     * @param string $message
+     * @param  string  $message
      * @return JsonResponse
      */
     public function validationError(string $message): JsonResponse
@@ -80,8 +80,8 @@ trait ErrorResponses
     }
 
     /**
-     * @param Exception $ex
-     * @param string|null $message
+     * @param  Exception  $ex
+     * @param  string|null  $message
      * @return JsonResponse
      */
     public function exception(Exception $ex, string $message = null): JsonResponse
@@ -99,5 +99,4 @@ trait ErrorResponses
     {
         return $this->error(config("api-response.messages.by-http-code.{$httpCode}", 'Error'), $httpCode);
     }
-
 }
