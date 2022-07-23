@@ -17,7 +17,7 @@ trait SuccessResponses
         return $this
             ->setMessage($message)
             ->setData($data)
-            ->setCode($httpCode?? IlluminateResponse::HTTP_OK)
+            ->setCode($httpCode ?? IlluminateResponse::HTTP_OK)
             ->json();
     }
 
