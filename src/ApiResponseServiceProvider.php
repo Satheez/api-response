@@ -4,7 +4,6 @@ namespace Satheez\ApiResponse;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Satheez\ApiResponse\Commands\ApiResponseCommand;
 
 class ApiResponseServiceProvider extends PackageServiceProvider
 {

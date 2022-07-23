@@ -3,9 +3,9 @@
 namespace Satheez\ApiResponse;
 
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response as IlluminateResponse;
 use Satheez\ApiResponse\Helpers\ErrorResponses;
 use Satheez\ApiResponse\Helpers\SuccessResponses;
-use Illuminate\Http\Response as IlluminateResponse;
 
 class ApiResponse
 {
@@ -30,45 +30,49 @@ class ApiResponse
     /**
      * @var int
      */
-    private int $httpCode= IlluminateResponse::HTTP_OK;
+    private int $httpCode = IlluminateResponse::HTTP_OK;
 
     /**
-     * @param mixed $data
+     * @param  mixed  $data
      * @return $this
      */
     public function setData(mixed $data): self
     {
         $this->data = $data;
+
         return $this;
     }
 
     /**
-     * @param string $error
+     * @param  string  $error
      * @return $this
      */
     public function setError(string $error): self
     {
         $this->error = $error;
+
         return $this;
     }
 
     /**
-     * @param string $message
+     * @param  string  $message
      * @return $this
      */
     public function setMessage(string $message): self
     {
-        $this->message = !empty($message) ? $message : null;
+        $this->message = ! empty($message) ? $message : null;
+
         return $this;
     }
 
     /**
-     * @param int $httpCode
+     * @param  int  $httpCode
      * @return $this
      */
     public function setCode(int $httpCode): self
     {
         $this->httpCode = $httpCode;
+
         return $this;
     }
 
@@ -77,7 +81,7 @@ class ApiResponse
      */
     public function get(): array
     {
-        $response = ['data' => $this->data,];
+        $response = ['data' => $this->data];
 
         if ($this->error !== null) {
             $response['error'] = $this->error;
