@@ -88,6 +88,7 @@ class ApiResponse
     public function withHeaders(array $headers): self
     {
         $this->headers = $headers;
+
         return $this;
     }
 
