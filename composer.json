@@ -35,8 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Satheez\\ApiResponse\\": "src",
-            "Satheez\\ApiResponse\\Database\\Factories\\": "database/factories"
+            "Satheez\\ApiResponse\\": "src"
         },
         "files": [
             "src/helpers.php"

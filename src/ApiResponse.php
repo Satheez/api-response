@@ -18,6 +18,11 @@ class ApiResponse
     private mixed $data = [];
 
     /**
+     * @var array
+     */
+    private array $headers = [];
+
+    /**
      * @var string|null
      */
     private ?string $message = null;
@@ -77,7 +82,29 @@ class ApiResponse
     }
 
     /**
-     * @return array[]
+     * @param  array  $headers
+     * @return $this
+     */
+    public function withHeaders(array $headers): self
+    {
+        $this->headers = $headers;
+        return $this;
+    }
+
+    /**
+     * @param  string  $key
+     * @param  string  $value
+     * @return $this
+     */
+    public function addHeader(string $key, string $value): self
+    {
+        $this->headers[$key] = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return array[string: mixed]
      */
     public function get(): array
     {
@@ -99,6 +126,6 @@ class ApiResponse
      */
     public function json(): JsonResponse
     {
-        return response()->json($this->get(), $this->httpCode);
+        return response()->json($this->get(), $this->httpCode, $this->headers);
     }
 }
